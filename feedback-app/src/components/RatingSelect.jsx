@@ -5,8 +5,8 @@ function RatingSelect({select}) {
 const [selected, setSelected] = useState(10)
 
 const handleChange = (e) => {
-    setSelected(+e.currenTarget.value)
-    select(+e.currenTarget.value)
+    setSelected(+e.currentTarget.value)
+    select(+e.currentTarget.value)
 }
 
   return (
