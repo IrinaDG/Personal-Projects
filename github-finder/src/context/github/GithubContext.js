@@ -28,14 +28,15 @@ export const GithubProvider = ({children}) => {
                 Authorization: `token ${GITHUB_TOKEN}`
             }
         })
-  
+        console.log(items);
+        
         const {items} = await response.json()
         
         dispatch({
             type:'GET_USERS',
             payload: items,
         })
-        console.log(items);
+        
      }
 
        //Clear users
@@ -47,7 +48,7 @@ export const GithubProvider = ({children}) => {
 
         
         //Loading state 
-             
+
         const setLoading = () => dispatch({
             type:'SET_LOADING'  
         })
