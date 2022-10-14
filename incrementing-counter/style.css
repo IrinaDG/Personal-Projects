@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto Mono", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.bg{
+    background-image: url('https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80');
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.25;
+}
+
+.counter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 50px;
+    text-align: center;
+}
+
+.counter{
+    font-size: 60px;
+    margin-top: 10px;
+    color: rgb(98, 99, 101);
+    text-shadow: 0 2px 3px rgb(92, 90, 90);
+}
+
+.fab.fa-twitter {
+    color: rgb(162, 203, 236);
+}
+
+.fab.fa-youtube{
+    color: red;
+}
+
+.fab.fa-facebook{
+    color: rgb(17, 0, 255);
+}
+
+.fab.fa-instagram{
+    background: linear-gradient(
+            to right, #f32170, #ff6b08,
+             #cf23cf, #eedd44);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
+
+.tw{
+    color: rgb(32, 178, 222);
+}
+
+.yt{
+    color: red;
+}
+
+.fb{
+    color: rgb(43, 46, 201);
+}
+
+.ig{
+    background: linear-gradient(
+            to right, #f32170, #ff6b08,
+             #cf23cf, #eedd44);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
+
+@media(max-width: 580px){
+    body{
+        flex-direction: column;
+    }
+}
