@@ -49,7 +49,7 @@ function setTime() {
     const minutes = time.getMinutes()
     const seconds = time.getSeconds()
     const date = time.getDate()
-    const ampm = hours <=12 ? 'PM' :'AM'
+    const ampm = hours <= 12 ? 'AM' :'PM'
 
     hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 12, 0, 360)}deg)`
     minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 60, 0, 360)}deg)`
