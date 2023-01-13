@@ -17,7 +17,6 @@ function SignUp() {
   });
 
   const { name, email, password } = formData;
-
   const navigate = useNavigate();
 
   const onChange = (e) => {
@@ -50,7 +49,8 @@ function SignUp() {
       navigate('/')
       
     } catch (error) {
-      toast.error('Something went wrong with your registration')
+      console.log(error);
+      toast.error('Something went wrong with your registration.')
     }
   }
 
@@ -59,7 +59,7 @@ function SignUp() {
       <div className="pageContainer">
         <header>
           <p className="pageHeader">
-            Welcome! Please enter your credentials to create an account!
+            Welcome! Please create an account!
           </p>
         </header>
         <form onSubmit={onSubmit}>
@@ -98,7 +98,6 @@ function SignUp() {
           <Link to="/forgot-password" className="forgotPasswordLink">
             Forgot Password
           </Link>
-
           <div className="signUpBar">
             <p className="signUpText">Sign Up</p>
             <button className="signUpButton">
@@ -108,7 +107,7 @@ function SignUp() {
         </form>
 
         <Link to="/sign-in" className="registerLink">
-          Sign In Instead
+          Already have an account? Sign In!
         </Link>
       </div>
     </>

@@ -50,6 +50,7 @@ function Profile() {
 
   return (
     <div className="profile">
+      <p className="headerTitle">Hello, {name} !</p>
       <header className="profileHeader">
         <p className="pageHeader">My profile</p>
         <button className="logOut" type="button" onClick={onLogout}>

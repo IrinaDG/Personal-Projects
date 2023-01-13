@@ -181,7 +181,7 @@ button {
   color: #8f8f8f;
 }
 .navbarListItemNameActive {
-  color: #2c2c2c;
+  color: #b7b3b3;
 }
 
 .nameInput {
@@ -611,6 +611,11 @@ button {
 
 .profile {
   margin-bottom: 10rem;
+}
+
+.headerTitle{
+  font-size: 35px;
+  color: #00cc66; 
 }
 
 .profileHeader {
