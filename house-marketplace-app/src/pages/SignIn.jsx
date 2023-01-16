@@ -4,7 +4,8 @@ import {Link, useNavigate} from 'react-router-dom'
 import {ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
+import OAuth from "../components/OAuth"
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
@@ -83,7 +84,8 @@ function SignIn() {
               <ArrowRightIcon fill='#ffffff' width='34px' height='34px' />
             </button>
           </div>
-        </form> 
+        </form>
+        <OAuth />
         <Link to='/sign-up' className='registerLink'>
           Don't have an account yet? Sign Up!
         </Link>
