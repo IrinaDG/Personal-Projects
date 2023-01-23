@@ -12,6 +12,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+import {addDoc, collection, serverTimestamp} from "firebase/firestore"
 
 function CreateListing() {
     const [geolocationEnabled, setGeolocationEnabled] = useState(true)
@@ -139,7 +140,7 @@ function CreateListing() {
        });
      };
 
-     const imgUrls = await Promise.all(
+     const imgUrl = await Promise.all(
        [...images].map((image) => storeImage(image))
      ).catch((err) => {
        console.log(err);
@@ -147,8 +148,23 @@ function CreateListing() {
        toast.error("Failed to upload images. Please upload images up until 2MB.");
        return;
      });
-      console.log(imgUrls);
-        setLoading(false)
+      
+      const formDataCopy = {
+        ...formData,
+        imgUrl,
+        geolocation,
+        timestamp:serverTimestamp(),
+      }
+
+      delete formDataCopy.images
+      delete formDataCopy.address
+      location && (formDataCopy.location = location)
+      !formDataCopy.offer && delete formDataCopy.discountedPrice
+
+      const docRef = await addDoc(collection(db, "listings"), formDataCopy)
+      setLoading(false)
+      toast.success("Your listing has been saved")
+      navigate(`/category/${formDataCopy.type}/${docRef.id}`)
     }
     const onMutate = (e) => {
         let boolean = null

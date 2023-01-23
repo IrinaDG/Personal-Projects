@@ -47,14 +47,14 @@ function ListingItem({ listing, id, onDelete }) {
             </p>
           </div>
         </div>
-        </Link>
-          {onDelete && (
-              <DeleteIcon
-                  className="removeIcon"
-                  fill="rgb(231, 76, 60)"
-                  onClick={() => onDelete(listing.id, listing.name)}
-              />
-          )}
+      </Link>
+      {onDelete && (
+        <DeleteIcon
+          className="removeIcon"
+          fill="rgb(231, 76, 60)"
+          onClick={() => onDelete(listing.id, listing.name)}
+        />
+      )}
     </li>
   );
 }
