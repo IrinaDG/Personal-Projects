@@ -334,7 +334,15 @@ button {
   position: relative;
   width: 100%;
   height: 100%;
-  color:#00cc66
+  color:#00cc66;
+}
+
+.swiperSlideDivExplore{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color:#00cc66;
+  cursor: pointer;
 }
 
 .swiperSlideImg {
@@ -345,12 +353,13 @@ button {
 .swiperSlideText {
   color: #ffffff;
   position: absolute;
-  top: 70px;
-  left: 0;
+  top: 20px;
+  left: 8px;
   font-weight: 600;
   max-width: 90%;
   font-size: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  background-color: rgba(143, 141, 141, 0.561);
   padding: 0.5rem;
 }
 @media (min-width: 1024px) {
@@ -360,13 +369,13 @@ button {
 }
 
 .swiperSlidePrice {
-  color: #000000;
+  color: #00cc66;
   position: absolute;
-  top: 143px;
-  left: 11px;
+  top: 70px;
+  left: 10px;
   font-weight: 600;
   max-width: 90%;
-  background-color: #ffffff;
+  background-color: #ffffffc2;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
 }
