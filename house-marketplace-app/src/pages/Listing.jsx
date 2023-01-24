@@ -7,7 +7,7 @@ import { db } from "../firebase.config";
 import Spinner from "../components/Spinner";
 import shareIcon from "../assets/svg/shareIcon.svg";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -41,12 +41,17 @@ function Listing() {
     return (
       <main>
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           slidesPerView={1}
           navigation={true}
           a11y={true}
           pagination={{ clickable: true }}
           style={{ height: "500px" }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
         >
           {listing.imgUrl.map((url, index) => {
             return (
@@ -55,7 +60,7 @@ function Listing() {
                   className="swiperSlideDiv"
                   style={{
                     background: `url(${listing.imgUrl[index]}) center no-repeat`,
-                    backgroundSize: "cover"
+                    backgroundSize: "cover",
                   }}
                 ></div>
               </SwiperSlide>

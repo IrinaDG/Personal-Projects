@@ -21,7 +21,7 @@ function Category() {
           listingsRef,
           where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
-          limit(10)
+          limit(5)
         );
         const querySnap = await getDocs(q);
         const lastVisible = querySnap.docs[querySnap.docs.length - 1];
@@ -36,7 +36,7 @@ function Category() {
         setListings(listings);
         setLoading(false);
       } catch (error) {
-        toast.error("Could not fetch listings, due to server connection error");
+        toast.error("Unable to load listings. Please try again!");
       }
     };
     fetchListings();
@@ -70,7 +70,7 @@ function Category() {
       setListings((prevState) => [...prevState, ...listings]);
       setLoading(false);
     } catch (error) {
-      toast.error("Could not fetch listings");
+      toast.error("Unable to load listings. Please try again!");
     }
   };
 

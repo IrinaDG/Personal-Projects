@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { db } from "../firebase.config"
 import {collection, getDocs, query, orderBy, limit} from "firebase/firestore"
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -53,11 +53,16 @@ function Slider() {
         <>
           <p className="exploreHeading">Recommended</p>
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
             style={{ height: "300px" }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
           >
             {listings.map(({ data, id }) => {
               return (

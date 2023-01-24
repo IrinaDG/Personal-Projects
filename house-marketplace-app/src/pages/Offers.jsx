@@ -47,7 +47,7 @@ function Offers() {
         setListings(listings);
         setLoading(false);
       } catch (error) {
-        toast.error("Could not fetch listings");
+        toast.error("Unable to load listings. Please try again!");
       }
     };
 
@@ -81,7 +81,7 @@ function Offers() {
       setListings((prevState) => [...prevState, ...listings]);
       setLoading(false);
     } catch (error) {
-      toast.error("Could not fetch listings");
+      toast.error("Unable to load listings. Please try again!");
     }
   };
 
