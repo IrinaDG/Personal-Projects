@@ -84,6 +84,9 @@ function Profile() {
     }
   }
 
+  const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
+  
+
   return (
     <div className="profile">
       <p className="headerTitle">Hello, {name} !</p>
@@ -126,7 +129,7 @@ function Profile() {
             />
           </form>
         </div>
-        <Link to="/create-listing" className='createListing'>
+        <Link to="/create-listing" className="createListing">
           <img src={homeIcon} alt="home" />
           <p>Sell or rent a venue.</p>
           <img src={arrowRight} alt="arrow right" />
@@ -140,7 +143,9 @@ function Profile() {
                   key={listing.id}
                   listing={listing.data}
                   id={listing.id}
-                  onDelete={()=>onDelete(listing.id)} />
+                  onDelete={() => onDelete(listing.id)}
+                  onEdit={() => onEdit(listing.id)}
+                />
               ))}
             </ul>
           </>

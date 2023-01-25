@@ -53,7 +53,13 @@ function Nav() {
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
             <PersonOutlineIcon
-              fill={pathMatchRoute("/profile") || pathMatchRoute("/sign-in") || pathMatchRoute("/create-listing") ? "#00cc66" : "#8f8f8f"}
+              fill={
+                pathMatchRoute("/profile") ||
+                pathMatchRoute("/sign-in") ||
+                pathMatchRoute("/create-listing")
+                  ? "#00cc66"
+                  : "#8f8f8f"
+              }
               width="36px"
               height="36px"
             />
