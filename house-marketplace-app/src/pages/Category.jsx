@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { collection, getDocs, query, where, orderBy, limit, startAfter } from "firebase/firestore"
 import { db } from "../firebase.config"
 import { toast } from "react-toastify"
 import Spinner from '../components/Spinner'
 import ListingItem from '../components/ListingItem'
+import logo from "../assets/jpg/logo 1.png";
+
 
 function Category() {
   const [listings, setListings] = useState(null);
@@ -76,8 +78,11 @@ function Category() {
 
   return (
     <div className="category">
-      <header>
-        <p className="pageHeader">
+      <header className='categoryHeader'>
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <p className="pageHeaderCategory">
           {params.categoryName === "rent"
             ? "Venues for rent"
             : "Venues for sale"}

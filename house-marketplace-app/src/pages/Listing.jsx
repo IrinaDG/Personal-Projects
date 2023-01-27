@@ -46,7 +46,7 @@ function Listing() {
           navigation={true}
           a11y={true}
           pagination={{ clickable: true }}
-          style={{ height: "500px" }}
+          style={{ height: "400px" }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,

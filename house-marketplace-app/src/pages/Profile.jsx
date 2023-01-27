@@ -8,6 +8,8 @@ import { toast } from 'react-toastify'
 import arrowRight from "../assets/svg/keyboardArrowRightIcon.svg";
 import homeIcon from "../assets/svg/homeIcon.svg";
 import ListingItem from "../components/ListingItem"
+import logo from "../assets/jpg/logo 1.png";
+
 
 function Profile() {
   const auth = getAuth()
@@ -89,14 +91,18 @@ function Profile() {
 
   return (
     <div className="profile">
-      <p className="headerTitle">Hello, {name} !</p>
       <header className="profileHeader">
-        <p className="pageHeader">My profile</p>
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <p className="headerTitle">Hello, {name} !</p>
+        
         <button className="logOut" type="button" onClick={onLogout}>
           Logout
         </button>
       </header>
       <main>
+        <p className="pageHeader">My profile</p>
         <div className="profileDetailsHeader">
           <p className="profileDetailsText">Personal Details</p>
           <p

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -12,6 +13,7 @@ import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
 import ListingItem from "../components/ListingItem";
+import logo from "../assets/jpg/logo 1.png";
 
 function Offers() {
   const [listings, setListings] = useState(null);
@@ -27,7 +29,7 @@ function Offers() {
           listingsRef,
           where("offer", "==", true),
           orderBy("timestamp", "desc"),
-          limit(10)
+          limit(5)
         );
 
         const querySnap = await getDocs(q);
@@ -87,8 +89,11 @@ function Offers() {
 
   return (
     <div className="category">
-      <header>
-        <p className="pageHeader">Offers</p>
+      <header className="headerOffers">
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <p className="pageHeaderOffers">Offers</p>
       </header>
 
       {loading ? (

@@ -3,13 +3,17 @@ import { Link } from "react-router-dom"
 import rentCategoryImage from "../assets/jpg/rentCategoryImage.jpg"
 import sellCategoryImage from "../assets/jpg/sellCategoryImage.jpg" 
 import Slider from '../components/Slider'
+import logo from "../assets/jpg/logo 1.png"
 
 
 function Explore() {
   return (
     <div className="explore">
-      <header>
-        <p className="pageHeader">Explore</p>
+      <header className="headerExplore">
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <p className="pageHeaderHome">Welcome to House Hunt!</p>
       </header>
       <main>
         <Slider />

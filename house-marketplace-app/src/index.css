@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300&amily=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ html::-webkit-scrollbar {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #f2f4f8;
+  background-color: #eaeeef;
   margin: 0;
   box-sizing: border-box;
 }
@@ -83,11 +83,22 @@ button {
   top: -3%;
   right: -2%;
 }
+@media(max-width:500px){
+  .removeIcon{
+    right: -4%;
+  }
+}
 .editIcon {
   cursor: pointer;
   position: absolute;
   top: -3.4%;
   right: 20px;
+}
+@media(max-width:700px){
+  .editIcon{
+    top: 20%;
+    right: -6px;
+  }
 }
 
 .pageContainer,
@@ -96,7 +107,8 @@ button {
 .listingDetails,
 .category,
 .explore {
-  margin: 1rem;
+  margin: 0.5rem 1rem 5rem;
+  transition: all 0.5s ease-in;
 }
 @media (min-width: 1024px) {
   .pageContainer,
@@ -106,6 +118,7 @@ button {
   .category,
   .explore {
     margin: 3rem;
+    transition: all 0.5s ease-in;
   }
 }
 
@@ -139,9 +152,53 @@ button {
   }
 }
 
+.headerExplore{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0;
+}
+
+.logo{
+  height: 80px;
+  width: auto;
+  margin-right: 50px;
+}
+@media(max-width:420px){
+  .logo{
+    margin: 0;
+  }
+}
+
 .pageHeader {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #00cc66;
+}
+@media(max-width:500px){
+  .pageHeader{
+    font-size: 2rem;
+  }
+}
+
+.pageHeaderHome{
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #00cc66;
+  animation: fade 1s linear;
+}
+
+.pageHeaderOffers{
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #00cc66;
+  margin-left: 18rem;
+  animation: fade 1s linear;
+}
+@media(max-width:724px){
+  .pageHeaderOffers{
+    margin-left: 5rem;
+  }
 }
 
 .navbar {
@@ -149,7 +206,7 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 85px;
+  height: 80px;
   background-color: #ffffff;
   z-index: 1000;
   display: flex;
@@ -268,6 +325,11 @@ button {
   }
 }
 
+.signInButton:hover, .signUpButton:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
 .socialLogin {
   margin-top: 4rem;
   display: flex;
@@ -289,6 +351,11 @@ button {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
+.socialIconDiv:hover{
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
 .socialIconImg {
   width: 100%;
 }
@@ -298,7 +365,7 @@ button {
   color: #00cc66;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 20%;
 }
 
 @media (min-width: 1217px) {
@@ -314,7 +381,9 @@ button {
 
 .exploreHeading,
 .exploreCategoryHeading {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 25px;
+  color: #4a4a4a;
 }
 
 .exploreCategoryHeading {
@@ -343,6 +412,7 @@ button {
   height: 100%;
   color:#00cc66;
   cursor: pointer;
+  border-radius: 15px;
 }
 
 .swiperSlideImg {
@@ -361,10 +431,13 @@ button {
   border-radius: 15px;
   background-color: rgba(143, 141, 141, 0.561);
   padding: 0.5rem;
+  transition: all 0.5s ease-in-out;
 }
 @media (min-width: 1024px) {
   .swiperSlideText {
     font-size: 1.75rem;
+    top: 10px;
+    transition: all 0.5s ease-in-out;
   }
 }
 
@@ -378,10 +451,13 @@ button {
   background-color: #ffffffc2;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
+  transition: all 0.5s ease-in-out;
 }
 @media (min-width: 1024px) {
   .swiperSlidePrice {
     font-size: 1.25rem;
+    top: 75px;
+    transition: all 0.5s ease-in-out;
   }
 }
 
@@ -395,20 +471,57 @@ button {
 
 .exploreCategoryImg {
   min-height: 115px;
-  height: 15vw;
+  height: 18vw;
   width: 100%;
   border-radius: 1.5rem;
   object-fit: cover;
   margin: 0 auto;
 }
 
+.exploreCategoryImg:hover{
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+}
+
 .exploreCategoryName {
-  font-weight: 500;
-  text-align: left;
+  font-weight: 600;
+  text-align: center;
+  font-size: 20px;
+  color: #525855;
+  margin-bottom: 15%;
 }
 
 .category {
   margin-bottom: 10rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.headerOffers{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0;
+}
+
+.categoryHeader{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pageHeaderCategory{
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #00cc66;
+  margin-left: 20%;
+  animation: fade 1s linear;
+}
+@media (max-width:620px){
+  .pageHeaderCategory{
+    margin-left: 10%;
+    text-align: center;
+  }
 }
 
 .categoryListings {
@@ -438,6 +551,12 @@ button {
     width: 19%;
     height: 217px;
   }
+}
+
+.categoryListingImg:hover{
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
 }
 
 .categoryListingDetails {
@@ -630,7 +749,7 @@ button {
 
 .headerTitle{
   font-size: 35px;
-  color: #00cc66; 
+  color: #7d7e7d; 
 }
 
 .profileHeader {
@@ -642,12 +761,18 @@ button {
 .logOut {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #ffffff;
   background-color: #00cc66;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 1rem;
+}
+
+.logOut:hover{
+  scale: 1.1;
+  background-color: #01a352;
+  transition: all 0.5s ease-in-out;
 }
 
 .profileDetailsHeader {
@@ -658,6 +783,7 @@ button {
 
 .personalDetailsText {
   font-weight: 600;
+  font-size: 20px;
 }
 
 .changePersonalDetails {
@@ -721,9 +847,17 @@ button {
   align-items: center;
 }
 
+.createListing:hover{
+  transform: scale(1.1);
+  background-color: #f9f9f9;
+  transition: all 0.5s ease-in-out;
+}
+
 .listingText {
-  margin-top: 3rem;
+  margin: 3rem 0 0 3rem;
   font-weight: 600;
+  font-size: 20px;
+  color: #5d5c5c;
 }
 
 .lisitingsList {
@@ -843,4 +977,16 @@ button {
   margin-left: 1rem;
   font-size: 0.8rem;
   opacity: 0.75;
+}
+
+@keyframes fade{
+  0%{
+    opacity:0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

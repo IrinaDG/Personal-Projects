@@ -51,13 +51,13 @@ function Slider() {
     return (
       listings && (
         <>
-          <p className="exploreHeading">Recommended</p>
+          <p className="exploreHeading">Recommended offers</p>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
-            style={{ height: "300px" }}
+            style={{ height: "350px" }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
